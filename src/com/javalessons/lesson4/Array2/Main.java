@@ -13,7 +13,8 @@ class Main {
             }
 
             System.out.print("Ваш масив: ");
-            for (int num : array)
+            for (int num : array) {
                 System.out.print(num + " ");
+            }
         }
     }

@@ -8,15 +8,15 @@ class Main {
             System.out.print("Введіть число: ");
             int target = scanner.nextInt();
 
-            int index = Search(array, target);
+            int index = search(array, target);
 
-            if (index != -1)
+            if (index != -1) {
                 System.out.println("Елемент знайдено за індексом: " + index);
-            else
+            } else
                 System.out.println("-1");
         }
 
-        public static int Search(int[] array, int target) {
+        public static int search(int[] array, int target) {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] == target) {
                     return i;

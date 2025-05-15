@@ -6,8 +6,9 @@ class Main {
             int count = 0;
 
             for (int number : array) {
-                if (number % 2 != 0)
+                if (number % 2 != 0) {
                     count++;
+                }
             }
 
             System.out.println("Кількість непарних чисел у масиві: " + count);
