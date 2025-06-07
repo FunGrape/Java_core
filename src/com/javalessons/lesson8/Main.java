@@ -1,10 +1,11 @@
 package com.javalessons.lesson8;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args){
-        HashMap<String, Integer> pair = new HashMap<>();
+        Map<String, Integer> pair = new HashMap<>();
 
         pair.put("Sneakers", 2000);
         pair.put("T-shirts", 1000);

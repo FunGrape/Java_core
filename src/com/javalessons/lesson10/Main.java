@@ -1,12 +1,11 @@
 package com.javalessons.lesson10;
 
-public class Main {
-    static class InvalidProductNameException extends Exception {
-        public InvalidProductNameException(String message){
-            super(message);
+class Main {
+        static class InvalidProductNameException extends Exception {
+            public InvalidProductNameException(String message){
+                super(message);
+            }
         }
-    }
-
     public static void validateProductName(String name) throws InvalidProductNameException {
         if (name == null || name.trim().isEmpty()) {
             throw new InvalidProductNameException("Неправильна назва товару.");
