@@ -1,11 +1,5 @@
 package com.javalessons.lesson10;
 
-class InvalidProductNameException extends Exception {
-    public InvalidProductNameException(String message){
-        super(message);
-    }
-}
-
 class Main {
     public static void validateProductName(String name) throws InvalidProductNameException {
         if (name == null || name.trim().isEmpty()) {
