@@ -1,11 +1,9 @@
-package org.example;
-
+package com.javalessons.lesson11;
 import java.util.List;
 import java.util.Map;
 
 public class Student {
     private Student student;
-
     public Student getStudent() {
         return student;
     }
@@ -52,6 +50,7 @@ public class Student {
     }
 
     public List<String> getFridge() {
+
         return fridge;
     }
     public void setFridge(List<String> fridge) {

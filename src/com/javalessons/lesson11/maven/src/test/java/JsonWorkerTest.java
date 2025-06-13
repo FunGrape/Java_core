@@ -33,8 +33,8 @@ public class JsonWorkerTest {
 
         System.out.println("Actual: " + actual);
         System.out.println("Expected: " + expected);
-        }
-        @Test
+    }
+    @Test
     void testToObjectWithWrongDefinitions() {
         JsonWorker worker = new JsonWorker();
         String json = "{\"student\":{\"name\":\"Оля Прокрастиненко\",\"age\":20,\"major\":\"Мистецтво Виживання\",\"skills\":[\"здача дедлайнів в останню хвилину\",\"читання конспектів уві сні\"],\"fridge\":[\"вода\",\"шматок сиру\",\"порожній контейнер\"],\"grades\":{\"історія\":\"B\",\"англійська\":\"A-\"},\"quote\":\"Посплю 5 хвилин і почну вчитись\"}}";
@@ -47,4 +47,4 @@ public class JsonWorkerTest {
         System.out.println("Actual: " + actual);
         System.out.println("Expected: " + expected);
     }
-    }
+}
