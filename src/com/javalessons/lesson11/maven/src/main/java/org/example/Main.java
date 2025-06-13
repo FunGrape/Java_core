@@ -4,8 +4,10 @@ public class Main {
     public static void main(String[] args){
         JsonWorker worker = new JsonWorker();
         String json = worker.toJson();
-        String studentJson = worker.toObject(json);
+        Student studentJson = worker.fromStudent(json);
+        String studentObject = worker.toString(studentJson);
 
-        System.out.println(studentJson);
+        System.out.print(json);
+        System.out.print(studentObject);
     }
 }

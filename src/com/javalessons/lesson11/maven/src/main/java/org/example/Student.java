@@ -1,16 +1,9 @@
 package org.example;
+
 import java.util.List;
 import java.util.Map;
 
-class Student {
-    private Student student;
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
+public class Student {
     private String name;
     private int age;
     private String major;

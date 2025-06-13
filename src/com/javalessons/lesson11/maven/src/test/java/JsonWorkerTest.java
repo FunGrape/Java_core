@@ -1,4 +1,5 @@
 import org.example.JsonWorker;
+import org.example.Student;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -8,8 +9,7 @@ public class JsonWorkerTest {
         JsonWorker worker = new JsonWorker();
 
         String actual = worker.toJson();
-        String expected = "{\"student\":{\"name\":\"Оля Прокрастиненко\",\"age\":19,\"major\":\"Мистецтво Виживання\",\"skills\":[\"здача дедлайнів в останню хвилину\",\"читання конспектів уві сні\"],\"fridge\":[\"вода\",\"шматок сиру\",\"порожній контейнер\"],\"grades\":{\"історія\":\"B\",\"англійська\":\"A-\"},\"quote\":\"Посплю 5 хвилин і почну вчитись\"}}";
-
+        String expected= "{\"name\":\"Оля Прокрастиненко\",\"age\":19,\"major\":\"Мистецтво Виживання\",\"skills\":[\"здача дедлайнів в останню хвилину\",\"читання конспектів уві сні\"],\"fridge\":[\"вода\",\"шматок сиру\",\"порожній контейнер\"],\"grades\":{\"історія\":\"B\",\"англійська\":\"A-\"},\"quote\":\"Посплю 5 хвилин і почну вчитись\"}";
         Assertions.assertEquals(expected, actual);
     }
     @Test
@@ -24,11 +24,10 @@ public class JsonWorkerTest {
     @Test
     void testToObject() {
         JsonWorker worker = new JsonWorker();
-        String json = "{\"student\":{\"name\":\"Оля Прокрастиненко\",\"age\":19,\"major\":\"Мистецтво Виживання\",\"skills\":[\"здача дедлайнів в останню хвилину\",\"читання конспектів уві сні\"],\"fridge\":[\"вода\",\"шматок сиру\",\"порожній контейнер\"],\"grades\":{\"історія\":\"B\",\"англійська\":\"A-\"},\"quote\":\"Посплю 5 хвилин і почну вчитись\"}}";
-
-        String actual = worker.toObject(json);
+        String json = "{\"name\":\"Оля Прокрастиненко\",\"age\":19,\"major\":\"Мистецтво Виживання\",\"skills\":[\"здача дедлайнів в останню хвилину\",\"читання конспектів уві сні\"],\"fridge\":[\"вода\",\"шматок сиру\",\"порожній контейнер\"],\"grades\":{\"історія\":\"B\",\"англійська\":\"A-\"},\"quote\":\"Посплю 5 хвилин і почну вчитись\"}";
+        Student student = worker.fromStudent(json);
+        String actual = worker.toString(student);
         String expected = "{\"name\":\"Оля Прокрастиненко\",\"age\":19,\"major\":\"Мистецтво Виживання\",\"skills\":[\"здача дедлайнів в останню хвилину\",\"читання конспектів уві сні\"],\"fridge\":[\"вода\",\"шматок сиру\",\"порожній контейнер\"],\"grades\":{\"історія\":\"B\",\"англійська\":\"A-\"},\"quote\":\"Посплю 5 хвилин і почну вчитись\"}";
-
         Assertions.assertEquals(expected, actual);
 
         System.out.println("Actual: " + actual);
@@ -37,10 +36,10 @@ public class JsonWorkerTest {
     @Test
     void testToObjectWithWrongDefinitions() {
         JsonWorker worker = new JsonWorker();
-        String json = "{\"student\":{\"name\":\"Оля Прокрастиненко\",\"age\":20,\"major\":\"Мистецтво Виживання\",\"skills\":[\"здача дедлайнів в останню хвилину\",\"читання конспектів уві сні\"],\"fridge\":[\"вода\",\"шматок сиру\",\"порожній контейнер\"],\"grades\":{\"історія\":\"B\",\"англійська\":\"A-\"},\"quote\":\"Посплю 5 хвилин і почну вчитись\"}}";
-
-        String actual = worker.toObject(json);
-        String expected = "{\"name\":\"Оля Прокрастиненко\",\"age\":19,\"major\":\"Мистецтво Виживання\",\"skills\":[\"здача дедлайнів в останню хвилину\",\"читання конспектів уві сні\"],\"fridge\":[\"вода\",\"шматок сиру\",\"порожній контейнер\"],\"grades\":{\"історія\":\"B\",\"англійська\":\"A-\"},\"quote\":\"Посплю 5 хвилин і почну вчитись\"}";
+        String json = "{\"name\":\"Оля Прокрастиненко\",\"age\":19,\"major\":\"Мистецтво Виживання\",\"skills\":[\"здача дедлайнів в останню хвилину\",\"читання конспектів уві сні\"],\"fridge\":[\"вода\",\"шматок сиру\",\"порожній контейнер\"],\"grades\":{\"історія\":\"B\",\"англійська\":\"A-\"},\"quote\":\"Посплю 5 хвилин і почну вчитись\"}";
+        Student student = worker.fromStudent(json);
+        String actual = worker.toString(student);
+        String expected = "{\"name\":\"Оля Прокрастиненко\",\"age\":20,\"major\":\"Мистецтво Виживання\",\"skills\":[\"здача дедлайнів в останню хвилину\",\"читання конспектів уві сні\"],\"fridge\":[\"вода\",\"шматок сиру\",\"порожній контейнер\"],\"grades\":{\"історія\":\"B\",\"англійська\":\"A-\"},\"quote\":\"Посплю 5 хвилин і почну вчитись\"}";
 
         Assertions.assertEquals(expected, actual);
 
