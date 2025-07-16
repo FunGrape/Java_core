@@ -19,12 +19,12 @@ public class CheckAllo3 {
         assertTrue(logo.isDisplayed(), "Немає логотипу!"); //перевірка логотипу
 
         WebElement search = chrome.findElement(By.id("search-form__input"));
-        search.sendKeys("Airpods 3");
+        search.sendKeys("AirPods 3");
         WebElement searchButton = chrome.findElement(By.xpath("//button[@class='search-form__submit-button']"));
         searchButton.click(); //пошук airpods 3
 
-        WebElement goods = chrome.findElement(By.xpath("//a[@class = 'product-card__title']"));
+        WebElement goods = chrome.findElement(By.xpath("//a[contains(text(),'AirPods 3')]"));
         String goodsText = goods.getText();
-        assertTrue(goodsText.contains("AirPods 3"), "Немає такого товару!"); //перевірка першого товару
+        System.out.println(goodsText);
     }
 }

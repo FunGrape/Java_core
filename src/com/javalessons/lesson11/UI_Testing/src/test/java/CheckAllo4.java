@@ -27,7 +27,7 @@ public class CheckAllo4 {
         WebElement dropdownMenu = menuContainer.findElement(By.xpath("//a[@class='mh-button mh-button--open']/following-sibling::div"));
         assertTrue(dropdownMenu.isDisplayed(), "Меню не відображається."); //перевірка дропдаун меню
 
-        WebElement shipmentAndPayment = chrome.findElement(By.xpath("//div[@class = 'mh-button__dropdown']/a[contains(text(), 'Доставка і оплата')]"));
+        WebElement shipmentAndPayment = chrome.findElement(By.xpath("//a[contains(text(), 'Доставка і оплата')]"));
         assertTrue(shipmentAndPayment.isDisplayed()); //перевірка елементу Доставка та оплата
         shipmentAndPayment.click();
 
